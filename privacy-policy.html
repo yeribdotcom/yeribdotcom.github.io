@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Yerib</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0a0a08;
+      --bg2: #111110;
+      --surface: #161614;
+      --border: #2a2a26;
+      --gold: #c9a96e;
+      --gold-dim: #8a6e42;
+      --text: #e8e4dc;
+      --muted: #7a7670;
+      --accent: #d4b896;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Mono', monospace;
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 1.9;
+      letter-spacing: 0.02em;
+      min-height: 100vh;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      height: 64px;
+      background: rgba(10,10,8,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .nav-logo img {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+      opacity: 0.85;
+    }
+
+    .nav-logo span {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .nav-back {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--gold); }
+
+    /* ─── HERO ─── */
+    .hero {
+      padding: 140px 48px 80px;
+      max-width: 860px;
+      margin: 0 auto;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-label {
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(42px, 6vw, 72px);
+      font-weight: 300;
+      line-height: 1.1;
+      letter-spacing: 0.02em;
+      color: var(--text);
+      margin-bottom: 32px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .meta-item {
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+
+    .meta-item span {
+      display: block;
+      color: var(--accent);
+      margin-top: 2px;
+    }
+
+    /* ─── LAYOUT ─── */
+    .content-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 48px 120px;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 0 64px;
+      align-items: start;
+    }
+
+    /* ─── SIDEBAR TOC ─── */
+    .toc {
+      position: sticky;
+      top: 96px;
+      padding-top: 64px;
+    }
+
+    .toc-label {
+      font-size: 9px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      margin-bottom: 20px;
+    }
+
+    .toc ol {
+      list-style: none;
+      counter-reset: toc;
+    }
+
+    .toc ol li {
+      counter-increment: toc;
+      margin-bottom: 10px;
+    }
+
+    .toc ol li a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: 0.05em;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      transition: color 0.2s;
+    }
+
+    .toc ol li a::before {
+      content: counter(toc, decimal-leading-zero);
+      font-size: 9px;
+      color: var(--border);
+      margin-top: 1px;
+      flex-shrink: 0;
+    }
+
+    .toc ol li a:hover { color: var(--gold); }
+
+    /* ─── MAIN CONTENT ─── */
+    .sections {
+      padding-top: 64px;
+    }
+
+    .section {
+      padding: 48px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section:last-child { border-bottom: none; }
+
+    .section-num {
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      color: var(--gold-dim);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      color: var(--text);
+      margin-bottom: 24px;
+    }
+
+    .section p {
+      color: #b0aa9e;
+      margin-bottom: 16px;
+      font-size: 13px;
+    }
+
+    .section p:last-child { margin-bottom: 0; }
+
+    .section ul, .section ol {
+      padding-left: 0;
+      list-style: none;
+      margin-bottom: 16px;
+    }
+
+    .section ul li, .section ol li {
+      color: #b0aa9e;
+      padding: 6px 0 6px 20px;
+      position: relative;
+      font-size: 13px;
+    }
+
+    .section ul li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: var(--gold-dim);
+      font-size: 8px;
+      top: 9px;
+    }
+
+    .highlight-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 2px solid var(--gold-dim);
+      padding: 20px 24px;
+      margin: 24px 0;
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    a.inline-link {
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px solid var(--gold-dim);
+      padding-bottom: 1px;
+      transition: border-color 0.2s;
+    }
+    a.inline-link:hover { border-color: var(--gold); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      border-top: 1px solid var(--border);
+      background: var(--bg2);
+      padding: 40px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 14px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .footer-copy {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+
+    /* ─── MOBILE ─── */
+    @media (max-width: 700px) {
+      nav { padding: 0 20px; }
+      .hero { padding: 120px 20px 60px; }
+
+      .content-wrap {
+        grid-template-columns: 1fr;
+        padding: 0 20px 80px;
+      }
+
+      .toc { display: none; }
+      footer { padding: 32px 20px; }
+    }
+
+    /* ─── FADE IN ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero, .sections { animation: fadeUp 0.7s ease both; }
+    .sections { animation-delay: 0.1s; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="https://yerib.com" class="nav-logo">
+    <img src="https://yerib.com/mini icon.png" alt="Yerib" onerror="this.style.display='none'" />
+    <span>Yerib</span>
+  </a>
+  <a href="https://yerib.com" class="nav-back">← Back to Store</a>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <p class="hero-label">Legal · 01</p>
+  <h1>Privacy<br /><em>Policy</em></h1>
+  <div class="hero-meta">
+    <div class="meta-item">
+      Effective Date
+      <span>May 1, 2025</span>
+    </div>
+    <div class="meta-item">
+      Last Updated
+      <span>May 1, 2025</span>
+    </div>
+    <div class="meta-item">
+      Jurisdiction
+      <span>Iran (Southern Region)</span>
+    </div>
+  </div>
+</header>
+
+<!-- MAIN -->
+<div class="content-wrap">
+
+  <!-- TOC -->
+  <aside class="toc">
+    <p class="toc-label">Contents</p>
+    <ol>
+      <li><a href="#s1">Introduction</a></li>
+      <li><a href="#s2">Information We Collect</a></li>
+      <li><a href="#s3">How We Use Your Information</a></li>
+      <li><a href="#s4">Information Sharing</a></li>
+      <li><a href="#s5">Data Retention</a></li>
+      <li><a href="#s6">Your Rights</a></li>
+      <li><a href="#s7">Security</a></li>
+      <li><a href="#s8">Messaging Platforms</a></li>
+      <li><a href="#s9">Children's Privacy</a></li>
+      <li><a href="#s10">Changes to This Policy</a></li>
+      <li><a href="#s11">Contact Us</a></li>
+    </ol>
+  </aside>
+
+  <!-- SECTIONS -->
+  <main class="sections">
+
+    <section class="section" id="s1">
+      <p class="section-num">01</p>
+      <h2>Introduction</h2>
+      <p>Welcome to Yerib ("we," "our," or "us"). We are a premium technology retailer based in southern Iran, operating under the trade name Fardin Pakhsh, and accessible at <a href="https://yerib.com" class="inline-link">yerib.com</a>.</p>
+      <p>This Privacy Policy explains how we collect, use, disclose, and safeguard your personal information when you visit our website, contact us through WhatsApp or Bale messenger, or purchase products from us. Please read this policy carefully.</p>
+      <div class="highlight-box">
+        By using our website or contacting us through any channel, you consent to the data practices described in this Privacy Policy. If you disagree with any part of this policy, please refrain from using our services.
+      </div>
+    </section>
+
+    <section class="section" id="s2">
+      <p class="section-num">02</p>
+      <h2>Information We Collect</h2>
+      <p>We collect only the information necessary to process your inquiries and orders. This includes:</p>
+      <ul>
+        <li><strong>Personal Identification:</strong> Full name and phone number, as provided through our contact form or messaging apps.</li>
+        <li><strong>Order Details:</strong> Product preferences, purchase type (retail, wholesale, or installment), and any notes you include.</li>
+        <li><strong>Messaging Data:</strong> Conversation history conducted via WhatsApp (+98 917 700 0737) or Bale messenger, for order tracking and support purposes.</li>
+        <li><strong>Technical Data:</strong> Basic browsing information such as your IP address, browser type, and pages visited — collected automatically by our web hosting infrastructure.</li>
+      </ul>
+      <p>We do not collect payment card details, national ID numbers, or sensitive financial information through our website.</p>
+    </section>
+
+    <section class="section" id="s3">
+      <p class="section-num">03</p>
+      <h2>How We Use Your Information</h2>
+      <p>The information we collect is used solely for legitimate business purposes:</p>
+      <ul>
+        <li>To respond to your product inquiries and process orders.</li>
+        <li>To arrange and confirm installment payment agreements.</li>
+        <li>To coordinate wholesale pricing for retail partners.</li>
+        <li>To provide after-sales support and warranty assistance.</li>
+        <li>To improve our website and service quality.</li>
+        <li>To comply with applicable legal and regulatory obligations.</li>
+      </ul>
+      <p>We do not use your data for unsolicited marketing, profiling, or automated decision-making.</p>
+    </section>
+
+    <section class="section" id="s4">
+      <p class="section-num">04</p>
+      <h2>Information Sharing</h2>
+      <p>Yerib does not sell, rent, or trade your personal information. We may share your data only in the following limited circumstances:</p>
+      <ul>
+        <li><strong>Delivery Partners:</strong> Couriers and logistics providers who fulfill product shipments within southern Iran — shared only to the extent necessary for delivery.</li>
+        <li><strong>Warranty & Brand Representatives:</strong> Authorized service centers for Apple, Samsung, Sony (PlayStation), Harman Kardon, or JBL, when warranty claims are initiated.</li>
+        <li><strong>Legal Compliance:</strong> When required by Iranian law or a valid court order, we may disclose information to government authorities.</li>
+      </ul>
+      <div class="highlight-box">
+        All third parties who receive your data are contractually obligated to use it solely for the purpose it was shared and to maintain appropriate confidentiality.
+      </div>
+    </section>
+
+    <section class="section" id="s5">
+      <p class="section-num">05</p>
+      <h2>Data Retention</h2>
+      <p>We retain your personal data only for as long as necessary to fulfil the purpose for which it was collected:</p>
+      <ul>
+        <li>Order and transaction records are retained for a minimum of 5 years in accordance with Iranian commercial regulations.</li>
+        <li>Messaging conversations are retained for 2 years for support and dispute resolution purposes.</li>
+        <li>Website technical logs are retained for up to 6 months.</li>
+      </ul>
+      <p>After the applicable retention period, your data is securely deleted or anonymized.</p>
+    </section>
+
+    <section class="section" id="s6">
+      <p class="section-num">06</p>
+      <h2>Your Rights</h2>
+      <p>You have the right to:</p>
+      <ul>
+        <li>Request access to the personal information we hold about you.</li>
+        <li>Request correction of any inaccurate or incomplete data.</li>
+        <li>Request deletion of your data, subject to legal retention requirements.</li>
+        <li>Withdraw consent to future communications at any time.</li>
+        <li>Request a copy of your data in a portable format.</li>
+      </ul>
+      <p>To exercise any of these rights, please contact us directly via WhatsApp or email. We will respond to verified requests within 14 business days.</p>
+    </section>
+
+    <section class="section" id="s7">
+      <p class="section-num">07</p>
+      <h2>Security</h2>
+      <p>We implement reasonable technical and organizational measures to protect your information from unauthorized access, alteration, disclosure, or destruction. These include:</p>
+      <ul>
+        <li>HTTPS encryption across the yerib.com website.</li>
+        <li>Restricted internal access to customer data on a need-to-know basis.</li>
+        <li>Secure storage of order records with access controls.</li>
+      </ul>
+      <p>However, no transmission over the internet or electronic storage method is 100% secure. We cannot guarantee absolute security and encourage you to share only the minimum necessary information.</p>
+    </section>
+
+    <section class="section" id="s8">
+      <p class="section-num">08</p>
+      <h2>Messaging Platforms</h2>
+      <p>A significant portion of our customer communication occurs via WhatsApp and Bale messenger. Please be aware that:</p>
+      <ul>
+        <li>Messages sent via WhatsApp are subject to <a href="https://www.whatsapp.com/legal/privacy-policy" class="inline-link" target="_blank" rel="noopener">WhatsApp's Privacy Policy</a>.</li>
+        <li>Messages sent via Bale are governed by Bale's own terms and privacy practices.</li>
+        <li>We do not control the data practices of these third-party platforms.</li>
+      </ul>
+      <p>We recommend reviewing the privacy policies of these platforms before initiating contact through them.</p>
+    </section>
+
+    <section class="section" id="s9">
+      <p class="section-num">09</p>
+      <h2>Children's Privacy</h2>
+      <p>Our services are intended for adults and business customers. We do not knowingly collect personal information from individuals under the age of 18. If you believe a minor has submitted information to us, please contact us immediately so we can delete it promptly.</p>
+    </section>
+
+    <section class="section" id="s10">
+      <p class="section-num">10</p>
+      <h2>Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time to reflect changes in our practices or applicable law. When we do, we will revise the "Last Updated" date at the top of this page.</p>
+      <p>We encourage you to review this policy periodically. Continued use of our website or services after any changes constitutes your acceptance of the updated policy.</p>
+    </section>
+
+    <section class="section" id="s11">
+      <p class="section-num">11</p>
+      <h2>Contact Us</h2>
+      <p>If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle your data, please reach out to us through any of the following:</p>
+      <ul>
+        <li><strong>Website:</strong> <a href="https://yerib.com" class="inline-link">yerib.com</a></li>
+        <li><strong>WhatsApp:</strong> <a href="https://wa.me/989177000737" class="inline-link" target="_blank" rel="noopener">+98 917 700 0737</a></li>
+        <li><strong>Bale Messenger:</strong> <a href="https://ble.ir/sendmessage?phone=989177000737" class="inline-link" target="_blank" rel="noopener">+98 917 700 0737</a></li>
+        <li><strong>Business Name:</strong> Fardin Pakhsh — Yerib</li>
+        <li><strong>Location:</strong> Southern Iran</li>
+      </ul>
+      <div class="highlight-box">
+        We are committed to resolving any privacy concerns promptly and transparently. Your trust is the foundation of our business.
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Yerib · Fardin Pakhsh</div>
+  <div class="footer-copy">© 1404 — All rights reserved.</div>
+  <div class="footer-links">
+    <a href="https://yerib.com">Home</a>
+    <a href="#s11">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
