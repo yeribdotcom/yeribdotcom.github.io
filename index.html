@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Yerib — مرکز فروش تک، عمده و اقساطی جنوب کشور</title>
+<meta name="description" content="یریب — تنها مرکز فروش تک، عمده و اقساطی آیفون نو و نات‌اکتیو، سامسونگ سری Ultra، PlayStation، Harman Kardon و JBL در جنوب کشور." />
+
+<link rel="icon" type="image/png" href="mini icon.png" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Vazirmatn', 'sans-serif'],
+        },
+        colors: {
+          bone:   '#F4F1EA',
+          ink:    '#0A0A0B',
+          gold:   '#C9A961',
+          rust:   '#B85C38',
+          char:   '#1A1A1C',
+          mist:   '#E8E4DC',
+        },
+        animation: {
+          'fade-up': 'fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards',
+          'shimmer': 'shimmer 3s ease-in-out infinite',
+        },
+        keyframes: {
+          fadeUp: {
+            '0%':   { opacity: '0', transform: 'translateY(24px)' },
+            '100%': { opacity: '1', transform: 'translateY(0)' },
+          },
+          shimmer: {
+            '0%, 100%': { opacity: '0.4' },
+            '50%':      { opacity: '1' },
+          },
+        },
+      },
+    },
+  }
+</script>
+
+<style>
+  * { -webkit-tap-highlight-color: transparent; font-family: 'Vazirmatn', sans-serif; }
+  html { scroll-behavior: smooth; }
+
+  /* Grain texture overlay */
+  .grain::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .dark .grain::before { opacity: 0.06; }
+
+  /* Vertical text */
+  .vertical-rl {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #C9A961; border-radius: 4px; }
+
+  /* Gradient text */
+  .text-gradient {
+    background: linear-gradient(135deg, #C9A961 0%, #B85C38 60%, #C9A961 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 6s ease infinite;
+  }
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50%      { background-position: 100% 50%; }
+  }
+
+  /* Marquee */
+  .marquee-track { animation: marquee 40s linear infinite; }
+  @keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(50%); }
+  }
+
+  /* Stagger reveal */
+  .stagger > * { opacity: 0; animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+  .stagger > *:nth-child(1) { animation-delay: 0.05s; }
+  .stagger > *:nth-child(2) { animation-delay: 0.15s; }
+  .stagger > *:nth-child(3) { animation-delay: 0.25s; }
+  .stagger > *:nth-child(4) { animation-delay: 0.35s; }
+  .stagger > *:nth-child(5) { animation-delay: 0.45s; }
+  .stagger > *:nth-child(6) { animation-delay: 0.55s; }
+
+  /* Brand card hover */
+  .brand-card {
+    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+  }
+  .brand-card:hover { transform: translateY(-6px); }
+  .brand-card:hover .brand-arrow { transform: translateX(-8px) rotate(-45deg); }
+  .brand-arrow { transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1); }
+
+  /* Form input focus */
+  .form-input { transition: all 0.3s ease; }
+  .form-input:focus {
+    outline: none;
+    border-color: #C9A961;
+    box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.15);
+  }
+  /* Decorative line */
+  .deco-line {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, currentColor, transparent);
+  }
+
+  /* Aspect-ratio frame */
+  .frame-glow {
+    box-shadow:
+      0 0 0 1px rgba(201, 169, 97, 0.3),
+      0 30px 60px -20px rgba(0, 0, 0, 0.4);
+  }
+  .dark .frame-glow {
+    box-shadow:
+      0 0 0 1px rgba(201, 169, 97, 0.4),
+      0 0 80px -10px rgba(201, 169, 97, 0.15),
+      0 30px 60px -20px rgba(0, 0, 0, 0.8);
+  }
+
+  /* ─────────── HERO SLIDER (Full Screen) ─────────── */
+  .slider-wrap { position: absolute; inset: 0; overflow: hidden; }
+  .slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .slide.active { opacity: 1; z-index: 2; }
+  .slide-img {
+    position: absolute;
+    left: 3%;
+    top: 50%;
+    transform: translateY(-50%) scale(1.05);
+    max-width: 50%;
+    max-height: 82vh;
+    object-fit: contain;
+    filter: drop-shadow(0 25px 40px rgba(0,0,0,0.35));
+    transition: transform 6s ease-out;
+  }
+  @media (max-width: 1023px) {
+    .slide-img {
+      left: 50%;
+      top: 35%;
+      transform: translate(-50%, -50%);
+      max-width: 82%;
+      max-height: 52vh;
+      transition: none;
+    }
+    .slide.active .slide-img {
+      transform: translate(-50%, -50%);
+    }
+  }
+  @media (min-width: 1024px) {
+    .slide.active .slide-img { transform: translateY(-50%) scale(1); }
+  }
+  .slide-label {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.4em;
+    color: rgba(201, 169, 97, 0.9);
+    font-weight: 500;
+  }
+  .slide-dots {
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+  }
+  .slide-dot {
+    width: 24px;
+    height: 2px;
+    background: rgba(201, 169, 97, 0.25);
+    border: none;
+    cursor: pointer;
+    transition: background 0.4s, width 0.4s;
+    padding: 0;
+  }
+  .slide-dot.active {
+    background: #C9A961;
+    width: 36px;
+  }
+
+  /* Hero gradient overlay for text readability */
+  .hero-overlay {
+    background: linear-gradient(to left, rgba(244,241,234,0.97) 0%, rgba(244,241,234,0.9) 35%, rgba(244,241,234,0.35) 60%, transparent 80%);
+  }
+  .dark .hero-overlay {
+    background: linear-gradient(to left, rgba(10,10,11,0.97) 0%, rgba(10,10,11,0.9) 35%, rgba(10,10,11,0.35) 60%, transparent 80%);
+  }
+  @media (max-width: 1023px) {
+    .hero-overlay {
+      background: linear-gradient(to top, rgba(244,241,234,1) 0%, rgba(244,241,234,1) 36%, rgba(244,241,234,0.85) 44%, rgba(244,241,234,0.08) 52%, transparent 60%);
+    }
+    .dark .hero-overlay {
+      background: linear-gradient(to top, rgba(10,10,11,1) 0%, rgba(10,10,11,1) 36%, rgba(10,10,11,0.85) 44%, rgba(10,10,11,0.08) 52%, transparent 60%);
+    }
+  }
+
+  /* ─────────── MOBILE MENU ─────────── */
+  .mobile-menu {
+    transform: translateY(-100vh);
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .mobile-menu.open { transform: translateY(0); }
+
+  .hamburger { display: flex; flex-direction: column; gap: 5px; }
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: currentColor;
+    transition: transform 0.4s, opacity 0.3s;
+    transform-origin: center;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+</style>
+</head>
+
+<body class="grain bg-bone dark:bg-ink text-ink dark:text-bone font-sans antialiased overflow-x-hidden transition-colors duration-500">
+
+<!-- ═══════════════════════════════════════════════════════
+     NAVIGATION
+═════════════════════════════════════════════════════════ -->
+<nav class="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-bone/70 dark:bg-ink/70 border-b border-ink/10 dark:border-bone/10">
+  <div class="max-w-[1400px] mx-auto px-5 lg:px-12 h-16 flex items-center justify-between">
+
+    <!-- Logo -->
+    <a href="#" class="flex items-center gap-3 group">
+      <img src="mini icon.png" alt="Yerib logo" class="h-9 w-auto max-w-[58px] object-contain" />
+      <!-- <div class="leading-none">
+        <div class="font-bold text-xl tracking-tight">Yerib</div>
+        <div class="text-[10px] tracking-[0.3em] text-ink/50 dark:text-bone/50 mt-0.5">EST · جنوب کشور</div>
+      </div> -->
+    </a>
+
+    <!-- Desktop links -->
+    <div class="hidden lg:flex items-center gap-10 text-sm font-medium">
+      <a href="#brands" class="hover:text-gold transition-colors">برندها</a>
+      <a href="#why" class="hover:text-gold transition-colors">چرا یریب</a>
+      <a href="#installments" class="hover:text-gold transition-colors">اقساط</a>
+      <a href="#contact" class="hover:text-gold transition-colors">تماس</a>
+    </div>
+
+    <!-- Right cluster: theme + CTA + hamburger -->
+    <div class="flex items-center gap-2 sm:gap-3">
+
+      <button id="themeToggle" aria-label="تغییر تم"
+        class="w-10 h-10 rounded-full border border-ink/15 dark:border-bone/20 flex items-center justify-center hover:border-gold dark:hover:border-gold transition-colors">
+        <svg class="w-4 h-4 hidden dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke-linecap="round"/>
+        </svg>
+        <svg class="w-4 h-4 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <a href="#contact"
+        class="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-ink dark:bg-bone text-bone dark:text-ink text-sm font-semibold hover:bg-gold dark:hover:bg-gold dark:hover:text-ink hover:text-ink transition-colors">
+        <span>سفارش</span>
+        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M19 12H5M12 5l-7 7 7 7" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+
+      <button id="hamburgerBtn" aria-label="باز کردن منو"
+        class="lg:hidden w-10 h-10 rounded-full border border-ink/15 dark:border-bone/20 flex items-center justify-center hover:border-gold transition-colors">
+        <span class="hamburger" id="hamburgerIcon">
+          <span></span><span></span><span></span>
+        </span>
+      </button>
+    </div>
+  </div>
+
+</nav>
+
+<!-- Mobile menu drawer -->
+<div id="mobileMenu" class="mobile-menu lg:hidden fixed top-16 inset-x-0 z-40 bg-bone dark:bg-ink border-b border-ink/10 dark:border-bone/10 shadow-xl">
+  <div class="px-5 py-6 flex flex-col gap-1 text-base">
+    <a href="#brands" class="mobile-link py-3 px-3 rounded-md hover:bg-mist/60 dark:hover:bg-char/60 hover:text-gold transition-colors flex items-center justify-between">
+      <span>برندها</span><span class="text-gold text-xs">←</span>
+    </a>
+    <a href="#why" class="mobile-link py-3 px-3 rounded-md hover:bg-mist/60 dark:hover:bg-char/60 hover:text-gold transition-colors flex items-center justify-between">
+      <span>چرا یریب</span><span class="text-gold text-xs">←</span>
+    </a>
+    <a href="#installments" class="mobile-link py-3 px-3 rounded-md hover:bg-mist/60 dark:hover:bg-char/60 hover:text-gold transition-colors flex items-center justify-between">
+      <span>اقساط</span><span class="text-gold text-xs">←</span>
+    </a>
+    <a href="#contact" class="mobile-link py-3 px-3 rounded-md hover:bg-mist/60 dark:hover:bg-char/60 hover:text-gold transition-colors flex items-center justify-between">
+      <span>تماس</span><span class="text-gold text-xs">←</span>
+    </a>
+    <a href="#contact" class="mobile-link mt-4 py-3.5 rounded-full bg-ink dark:bg-bone text-bone dark:text-ink text-center font-semibold text-sm hover:bg-gold dark:hover:bg-gold dark:hover:text-ink hover:text-ink transition-colors">
+      ثبت سفارش در واتساپ
+    </a>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     HERO with SLIDER
+═════════════════════════════════════════════════════════ -->
+<section class="relative w-full overflow-hidden" style="height: 100vh; min-height: 640px;">
+
+  <!-- Vertical label -->
+  <div class="hidden lg:block absolute right-6 top-24 vertical-rl text-[10px] tracking-[0.5em] text-ink/40 dark:text-bone/40 font-medium z-20">
+    YERIB · SOUTHERN IRAN · PREMIUM TECH
+  </div>
+
+  <!-- FULL-SCREEN SLIDER -->
+  <div class="slider-wrap bg-gradient-to-br from-mist via-bone to-mist dark:from-char dark:via-ink dark:to-char">
+
+    <!-- decorative grid -->
+    <svg class="absolute inset-0 w-full h-full opacity-[0.08] dark:opacity-[0.12] z-[1]" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <defs>
+        <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+          <path d="M 10 0 L 0 0 0 10" fill="none" stroke="currentColor" stroke-width="0.2"/>
+        </pattern>
+      </defs>
+      <rect width="100" height="100" fill="url(#grid)"/>
+    </svg>
+
+    <!-- corner labels -->
+    <div class="absolute top-20 right-4 text-[9px] tracking-widest text-ink/50 dark:text-bone/50 z-[5]">٠٠١ /</div>
+    <div class="absolute top-20 left-4 text-[9px] tracking-widest text-ink/50 dark:text-bone/50 z-[5]">/ EST</div>
+
+    <!-- ─── SLIDES ─── -->
+    <div class="slide active" data-slide="0">
+      <img src="slider-iphone-15-pro.jpg" alt="iPhone 15 Pro Max" class="slide-img" loading="eager">
+      <div class="slide-label">/ APPLE iPHONE</div>
+    </div>
+
+    <div class="slide" data-slide="1">
+      <img src="slider-galaxy-s24-ultra.jpg" alt="Samsung Galaxy S24 Ultra" class="slide-img" loading="lazy">
+      <div class="slide-label">/ SAMSUNG ULTRA</div>
+    </div>
+
+    <div class="slide" data-slide="2">
+      <img src="slider-playstation-5.jpg" alt="PlayStation 5" class="slide-img" loading="lazy">
+      <div class="slide-label">/ PLAYSTATION 5</div>
+    </div>
+
+    <div class="slide" data-slide="3">
+      <img src="slider-harman-kardon.jpg" alt="Harman Kardon" class="slide-img" loading="lazy">
+      <div class="slide-label">/ HARMAN KARDON</div>
+    </div>
+
+    <div class="slide" data-slide="4">
+      <img src="slider-jbl-speaker.jpg" alt="JBL Speaker" class="slide-img" loading="lazy">
+      <div class="slide-label">/ JBL CHARGE</div>
+    </div>
+
+    <!-- Dots -->
+    <div class="slide-dots" id="sliderDots">
+      <button class="slide-dot active" data-target="0" aria-label="اسلاید ۱"></button>
+      <button class="slide-dot" data-target="1" aria-label="اسلاید ۲"></button>
+      <button class="slide-dot" data-target="2" aria-label="اسلاید ۳"></button>
+      <button class="slide-dot" data-target="3" aria-label="اسلاید ۴"></button>
+      <button class="slide-dot" data-target="4" aria-label="اسلاید ۵"></button>
+    </div>
+  </div>
+
+  <!-- Gradient overlay for text readability -->
+  <div class="hero-overlay absolute inset-0 z-[3] pointer-events-none"></div>
+
+  <!-- Content overlay -->
+  <div class="absolute inset-0 z-[4] flex items-end lg:items-center pt-16 pb-8 lg:pb-0">
+    <div class="max-w-[1400px] mx-auto px-5 lg:px-12 w-full">
+      <div class="flex">
+        <div class="w-full lg:w-[52%]">
+
+          <div class="hidden sm:flex items-center gap-3 mb-4 lg:mb-8">
+            <span class="w-12 deco-line text-gold"></span>
+            <span class="text-xs tracking-[0.35em] font-medium text-gold uppercase">۱۴۰۴ · فردین پخش</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-6xl lg:text-7xl xl:text-[5rem] font-bold leading-[1.1] tracking-tight">
+            <span class="block">تنها مرکز فروش</span>
+            <span class="block text-gradient">تک، عمده و اقساطی</span>
+            <span class="block text-lg sm:text-3xl lg:text-4xl font-light text-ink/70 dark:text-bone/70 mt-2 lg:mt-4">
+              در جنوب کشور
+            </span>
+          </h1>
+
+          <p class="mt-3 lg:mt-10 max-w-xl text-xs sm:text-base lg:text-lg leading-relaxed text-ink/75 dark:text-bone/70">
+            آیفون نو و نات‌اکتیو، سامسونگ سری Ultra، PlayStation و سیستم صوتی
+            <span class="font-bold text-gold">Harman Kardon</span> و
+            <span class="font-bold text-gold">JBL</span>
+            — فقط همین برندها، بدون کالای متفرقه.
+          </p>
+
+          <div class="mt-4 lg:mt-10 flex flex-wrap gap-2 sm:gap-4">
+            <a href="#contact"
+              class="group inline-flex items-center gap-3 px-6 sm:px-7 py-3.5 sm:py-4 rounded-full bg-ink dark:bg-bone text-bone dark:text-ink font-semibold text-sm hover:bg-gold dark:hover:bg-gold dark:hover:text-ink hover:text-ink transition-all">
+              ثبت سفارش در واتساپ
+              <svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.498 14.382c-.301-.15-1.767-.867-2.04-.966-.273-.101-.473-.15-.673.151-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.174-.3-.019-.465.13-.615.136-.135.301-.345.451-.523.146-.181.194-.301.297-.496.1-.21.049-.375-.025-.524-.075-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.51-.172-.015-.371-.015-.571-.015-.2 0-.523.074-.797.359-.273.3-1.045 1.02-1.045 2.475s1.07 2.865 1.219 3.075c.149.18 2.095 3.195 5.076 4.483.71.3 1.262.477 1.694.607.712.227 1.36.195 1.871.121.571-.085 1.758-.719 2.006-1.413.255-.694.255-1.29.18-1.414-.074-.135-.27-.21-.57-.345m-5.446 7.443h-.016c-1.77 0-3.524-.48-5.055-1.378l-.36-.214-3.75.975 1.005-3.645-.239-.375a9.869 9.869 0 0 1-1.51-5.26c0-5.45 4.436-9.884 9.891-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652a12.062 12.062 0 0 0 5.71 1.447h.006c6.585 0 11.946-5.336 11.949-11.896 0-3.176-1.24-6.165-3.495-8.411"/>
+              </svg>
+            </a>
+            <a href="#brands"
+              class="inline-flex items-center gap-3 px-6 sm:px-7 py-3.5 sm:py-4 rounded-full border border-ink/20 dark:border-bone/30 hover:border-gold dark:hover:border-gold font-semibold text-sm transition-colors">
+              مشاهده برندها
+              <span class="w-1.5 h-1.5 rounded-full bg-gold animate-shimmer"></span>
+            </a>
+          </div>
+
+          <div class="mt-4 lg:mt-16 grid grid-cols-3 gap-3 sm:gap-6 max-w-md">
+            <div>
+              <div class="text-2xl sm:text-4xl font-bold text-gold">۰۵</div>
+              <div class="text-[9px] sm:text-[11px] tracking-widest mt-1 text-ink/60 dark:text-bone/60 uppercase">برند منتخب</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-4xl font-bold text-gold">۱۰۰٪</div>
+              <div class="text-[9px] sm:text-[11px] tracking-widest mt-1 text-ink/60 dark:text-bone/60 uppercase">اصالت کالا</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-4xl font-bold text-gold">۲۴/۷</div>
+              <div class="text-[9px] sm:text-[11px] tracking-widest mt-1 text-ink/60 dark:text-bone/60 uppercase">پاسخ‌گویی</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating brand tag (desktop only) -->
+  <div class="hidden lg:block absolute bottom-10 left-10 bg-gold text-ink px-5 py-3 rounded-sm font-bold text-sm shadow-xl z-[5]">
+    فقط برندهای اصلی
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     MARQUEE STRIP
+═════════════════════════════════════════════════════════ -->
+<section class="relative py-5 sm:py-6 border-y border-ink/10 dark:border-bone/10 overflow-hidden bg-ink dark:bg-bone text-bone dark:text-ink">
+  <div class="flex marquee-track whitespace-nowrap font-bold text-2xl sm:text-3xl lg:text-4xl">
+    <div class="flex items-center gap-8 sm:gap-12 px-6">
+      <span>Apple</span> <span class="text-gold">✦</span>
+      <span>Samsung Ultra</span> <span class="text-gold">✦</span>
+      <span>PlayStation</span> <span class="text-gold">✦</span>
+      <span>Harman Kardon</span> <span class="text-gold">✦</span>
+      <span>JBL</span> <span class="text-gold">✦</span>
+      <span>Apple</span> <span class="text-gold">✦</span>
+      <span>Samsung Ultra</span> <span class="text-gold">✦</span>
+      <span>PlayStation</span> <span class="text-gold">✦</span>
+      <span>Harman Kardon</span> <span class="text-gold">✦</span>
+      <span>JBL</span> <span class="text-gold">✦</span>
+    </div>
+    <div class="flex items-center gap-8 sm:gap-12 px-6" aria-hidden="true">
+      <span>Apple</span> <span class="text-gold">✦</span>
+      <span>Samsung Ultra</span> <span class="text-gold">✦</span>
+      <span>PlayStation</span> <span class="text-gold">✦</span>
+      <span>Harman Kardon</span> <span class="text-gold">✦</span>
+      <span>JBL</span> <span class="text-gold">✦</span>
+      <span>Apple</span> <span class="text-gold">✦</span>
+      <span>Samsung Ultra</span> <span class="text-gold">✦</span>
+      <span>PlayStation</span> <span class="text-gold">✦</span>
+      <span>Harman Kardon</span> <span class="text-gold">✦</span>
+      <span>JBL</span> <span class="text-gold">✦</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     BRANDS GRID
+═════════════════════════════════════════════════════════ -->
+<section id="brands" class="py-20 lg:py-32 relative">
+  <div class="max-w-[1400px] mx-auto px-5 lg:px-12">
+
+    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12 lg:mb-16">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="text-xs tracking-[0.35em] font-medium text-gold">٠١ — برندها</span>
+          <span class="w-12 deco-line text-gold"></span>
+        </div>
+        <h2 class="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight">
+          محصولات <span class="text-gradient">منتخب</span>
+        </h2>
+      </div>
+      <p class="lg:max-w-sm text-sm sm:text-base text-ink/70 dark:text-bone/65 leading-relaxed">
+        ما به جای تنوع گسترده، روی پنج برند بنیادین تمرکز کرده‌ایم — برندهایی که اعتبارشان در زمان اثبات شده.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-ink/10 dark:bg-bone/10 rounded-sm overflow-hidden">
+
+      <!-- Apple iPhone -->
+      <article class="brand-card group bg-bone dark:bg-ink p-7 lg:p-10 relative">
+        <div class="flex items-start justify-between mb-6 lg:mb-8">
+          <span class="text-[10px] tracking-widest text-ink/50 dark:text-bone/50">٠١</span>
+          <span class="brand-arrow inline-flex w-9 h-9 items-center justify-center rounded-full border border-ink/20 dark:border-bone/30 group-hover:border-gold group-hover:bg-gold group-hover:text-ink">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M7 17L17 7M7 7h10v10" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
+        <div class="aspect-square mb-6 rounded-sm bg-mist/50 dark:bg-char/50 flex items-center justify-center">
+          <svg class="w-20 h-20 text-ink/80 dark:text-bone/80" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+          </svg>
+        </div>
+        <h3 class="text-2xl lg:text-3xl font-bold mb-2">آیفون</h3>
+        <p class="text-sm text-ink/65 dark:text-bone/60 leading-relaxed">گوشی‌های نو و نات‌اکتیو با گارانتی معتبر</p>
+        <div class="absolute top-0 left-0 w-1 h-0 bg-gold group-hover:h-full transition-all duration-700"></div>
+      </article>
+
+      <!-- Samsung Ultra -->
+      <article class="brand-card group bg-bone dark:bg-ink p-7 lg:p-10 relative">
+        <div class="flex items-start justify-between mb-6 lg:mb-8">
+          <span class="text-[10px] tracking-widest text-ink/50 dark:text-bone/50">٠٢</span>
+          <span class="brand-arrow inline-flex w-9 h-9 items-center justify-center rounded-full border border-ink/20 dark:border-bone/30 group-hover:border-gold group-hover:bg-gold group-hover:text-ink">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M7 17L17 7M7 7h10v10" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
+        <div class="aspect-square mb-6 rounded-sm bg-mist/50 dark:bg-char/50 flex items-center justify-center">
+          <svg class="w-20 h-20 text-ink/80 dark:text-bone/80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="6" y="2" width="12" height="20" rx="2"/>
+            <line x1="11" y1="18" x2="13" y2="18" stroke-linecap="round"/>
+            <line x1="8" y1="5" x2="16" y2="5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="text-2xl lg:text-3xl font-bold mb-2">سامسونگ <span class="text-gradient">Ultra</span></h3>
+        <p class="text-sm text-ink/65 dark:text-bone/60 leading-relaxed">سری Ultra — پرچمداران بی‌رقیب سامسونگ</p>
+        <div class="absolute top-0 left-0 w-1 h-0 bg-gold group-hover:h-full transition-all duration-700"></div>
+      </article>
+
+      <!-- PlayStation -->
+      <article class="brand-card group bg-bone dark:bg-ink p-7 lg:p-10 relative">
+        <div class="flex items-start justify-between mb-6 lg:mb-8">
+          <span class="text-[10px] tracking-widest text-ink/50 dark:text-bone/50">٠٣</span>
+          <span class="brand-arrow inline-flex w-9 h-9 items-center justify-center rounded-full border border-ink/20 dark:border-bone/30 group-hover:border-gold group-hover:bg-gold group-hover:text-ink">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M7 17L17 7M7 7h10v10" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
+        <div class="aspect-square mb-6 rounded-sm bg-mist/50 dark:bg-char/50 flex items-center justify-center">
+          <svg class="w-20 h-20 text-ink/80 dark:text-bone/80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M6 11h12c2 0 3 1 3 3v2c0 2-1 3-3 3h-1l-2-2H8l-2 2H5c-2 0-3-1-3-3v-2c0-2 1-3 3-3z" stroke-linejoin="round"/>
+            <circle cx="8.5" cy="14.5" r="0.8" fill="currentColor"/>
+            <circle cx="15.5" cy="14.5" r="0.8" fill="currentColor"/>
+            <line x1="6" y1="14.5" x2="7" y2="14.5" stroke-linecap="round"/>
+            <line x1="17" y1="14.5" x2="18" y2="14.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="text-2xl lg:text-3xl font-bold mb-2">PlayStation</h3>
+        <p class="text-sm text-ink/65 dark:text-bone/60 leading-relaxed">کنسول و لوازم جانبی، فوری و اصلی</p>
+        <div class="absolute top-0 left-0 w-1 h-0 bg-gold group-hover:h-full transition-all duration-700"></div>
+      </article>
+
+      <!-- Harman Kardon -->
+      <article class="brand-card group bg-bone dark:bg-ink p-7 lg:p-10 relative">
+        <div class="flex items-start justify-between mb-6 lg:mb-8">
+          <span class="text-[10px] tracking-widest text-ink/50 dark:text-bone/50">٠٤</span>
+          <span class="brand-arrow inline-flex w-9 h-9 items-center justify-center rounded-full border border-ink/20 dark:border-bone/30 group-hover:border-gold group-hover:bg-gold group-hover:text-ink">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M7 17L17 7M7 7h10v10" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
+        <div class="aspect-square mb-6 rounded-sm bg-mist/50 dark:bg-char/50 flex items-center justify-center">
+          <svg class="w-20 h-20 text-ink/80 dark:text-bone/80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="9"/>
+            <circle cx="12" cy="12" r="5"/>
+            <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+          </svg>
+        </div>
+        <h3 class="text-2xl lg:text-3xl font-bold mb-2">Harman Kardon</h3>
+        <p class="text-sm text-ink/65 dark:text-bone/60 leading-relaxed">سیستم‌های صوتی لوکس و خانگی</p>
+        <div class="absolute top-0 left-0 w-1 h-0 bg-gold group-hover:h-full transition-all duration-700"></div>
+      </article>
+
+      <!-- JBL -->
+      <article class="brand-card group bg-bone dark:bg-ink p-7 lg:p-10 relative">
+        <div class="flex items-start justify-between mb-6 lg:mb-8">
+          <span class="text-[10px] tracking-widest text-ink/50 dark:text-bone/50">٠٥</span>
+          <span class="brand-arrow inline-flex w-9 h-9 items-center justify-center rounded-full border border-ink/20 dark:border-bone/30 group-hover:border-gold group-hover:bg-gold group-hover:text-ink">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M7 17L17 7M7 7h10v10" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
+        <div class="aspect-square mb-6 rounded-sm bg-mist/50 dark:bg-char/50 flex items-center justify-center">
+          <svg class="w-20 h-20 text-ink/80 dark:text-bone/80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="7" y="3" width="10" height="18" rx="2"/>
+            <circle cx="12" cy="9" r="1.5"/>
+            <circle cx="12" cy="15.5" r="2.5"/>
+          </svg>
+        </div>
+        <h3 class="text-2xl lg:text-3xl font-bold mb-2">JBL</h3>
+        <p class="text-sm text-ink/65 dark:text-bone/60 leading-relaxed">اسپیکرها و هندزفری اصلی</p>
+        <div class="absolute top-0 left-0 w-1 h-0 bg-gold group-hover:h-full transition-all duration-700"></div>
+      </article>
+
+      <!-- Sixth: ethos card -->
+      <article class="bg-ink dark:bg-bone text-bone dark:text-ink p-7 lg:p-10 relative flex flex-col justify-between">
+        <div>
+          <div class="text-[10px] tracking-widest text-gold mb-6 lg:mb-8">~</div>
+          <h3 class="text-2xl lg:text-4xl font-bold leading-tight">
+            بدون <span class="text-gold">کالای</span> متفرقه.
+          </h3>
+          <p class="mt-4 lg:mt-6 text-sm leading-relaxed opacity-80">
+            تمرکز ما بر کیفیت است، نه تنوع. هر کالایی که می‌فروشیم، شخصاً انتخاب شده.
+          </p>
+        </div>
+        <a href="#contact" class="mt-8 inline-flex items-center gap-2 text-sm font-semibold border-b border-current pb-1 self-start hover:text-gold dark:hover:text-gold transition-colors">
+          استعلام موجودی
+          <span>←</span>
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     WHY US
+═════════════════════════════════════════════════════════ -->
+<section id="why" class="py-20 lg:py-32 bg-mist dark:bg-char relative overflow-hidden">
+
+  <div class="absolute -left-10 top-1/2 -translate-y-1/2 font-black text-[12rem] sm:text-[18rem] lg:text-[26rem] text-ink/[0.03] dark:text-bone/[0.04] leading-none pointer-events-none select-none">
+    Yerib
+  </div>
+
+  <div class="max-w-[1400px] mx-auto px-5 lg:px-12 relative">
+    <div class="max-w-2xl mb-12 lg:mb-16">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="text-xs tracking-[0.35em] font-medium text-gold">٠٢ — چرا یریب</span>
+        <span class="w-12 deco-line text-gold"></span>
+      </div>
+      <h2 class="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight">
+        تجربه‌ای از جنس <span class="text-gradient">اعتماد</span>
+      </h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+
+      <div class="border-t border-ink/20 dark:border-bone/20 pt-6">
+        <div class="text-gold mb-4">
+          <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M9 12l2 2 4-4M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="text-xl lg:text-2xl font-bold mb-2">اصالت تضمینی</h3>
+        <p class="text-sm text-ink/65 dark:text-bone/60 leading-relaxed">هر کالا با گارانتی معتبر و قابل پیگیری</p>
+      </div>
+
+      <div class="border-t border-ink/20 dark:border-bone/20 pt-6">
+        <div class="text-gold mb-4">
+          <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="6" width="18" height="13" rx="2"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+            <line x1="7" y1="15" x2="9" y2="15" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="text-xl lg:text-2xl font-bold mb-2">فروش اقساطی</h3>
+        <p class="text-sm text-ink/65 dark:text-bone/60 leading-relaxed">امکان پرداخت بلندمدت با شرایط منعطف</p>
+      </div>
+
+      <div class="border-t border-ink/20 dark:border-bone/20 pt-6">
+        <div class="text-gold mb-4">
+          <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M3 3h18v6H3zM3 9v12h18V9M9 14h6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="text-xl lg:text-2xl font-bold mb-2">عمده‌فروشی</h3>
+        <p class="text-sm text-ink/65 dark:text-bone/60 leading-relaxed">قیمت ویژه برای همکاران و فروشگاه‌ها</p>
+      </div>
+
+      <div class="border-t border-ink/20 dark:border-bone/20 pt-6">
+        <div class="text-gold mb-4">
+          <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="text-xl lg:text-2xl font-bold mb-2">ارسال سریع</h3>
+        <p class="text-sm text-ink/65 dark:text-bone/60 leading-relaxed">پاسخ‌گویی و ارسال در سراسر جنوب کشور</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     INSTALLMENTS
+═════════════════════════════════════════════════════════ -->
+<section id="installments" class="py-20 lg:py-32 relative">
+  <div class="max-w-[1400px] mx-auto px-5 lg:px-12">
+
+    <div class="grid lg:grid-cols-12 gap-10 items-start">
+
+      <div class="lg:col-span-5 lg:sticky lg:top-32">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="text-xs tracking-[0.35em] font-medium text-gold">٠٣ — اقساط</span>
+          <span class="w-12 deco-line text-gold"></span>
+        </div>
+        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1]">
+          خرید آسان، <br/>
+          <span class="text-gradient">پرداخت راحت</span>
+        </h2>
+        <p class="mt-5 lg:mt-6 text-sm sm:text-base text-ink/70 dark:text-bone/65 leading-relaxed">
+          دسترسی به برندهای برتر دیگر منتظر سرمایه نمی‌ماند. شرایط اقساطی منعطف برای مشتریان حقیقی و حقوقی.
+        </p>
+      </div>
+
+      <div class="lg:col-span-7 space-y-px bg-ink/10 dark:bg-bone/10 rounded-sm overflow-hidden">
+
+        <div class="bg-bone dark:bg-ink p-6 lg:p-8 flex items-start gap-5 lg:gap-6 hover:bg-mist/50 dark:hover:bg-char/50 transition-colors">
+          <div class="text-4xl lg:text-5xl font-bold text-gold w-14 lg:w-16 flex-shrink-0">۰۱</div>
+          <div>
+            <h3 class="text-xl lg:text-2xl font-bold mb-2">انتخاب کالا</h3>
+            <p class="text-sm text-ink/65 dark:text-bone/60 leading-relaxed">برند و مدل مورد نظر را انتخاب کنید و در فرم تماس به ما اطلاع دهید.</p>
+          </div>
+        </div>
+
+        <div class="bg-bone dark:bg-ink p-6 lg:p-8 flex items-start gap-5 lg:gap-6 hover:bg-mist/50 dark:hover:bg-char/50 transition-colors">
+          <div class="text-4xl lg:text-5xl font-bold text-gold w-14 lg:w-16 flex-shrink-0">۰۲</div>
+          <div>
+            <h3 class="text-xl lg:text-2xl font-bold mb-2">استعلام شرایط</h3>
+            <p class="text-sm text-ink/65 dark:text-bone/60 leading-relaxed">کارشناسان ما در واتساپ، گزینه‌های پرداخت اقساطی متناسب را معرفی می‌کنند.</p>
+          </div>
+        </div>
+
+        <div class="bg-bone dark:bg-ink p-6 lg:p-8 flex items-start gap-5 lg:gap-6 hover:bg-mist/50 dark:hover:bg-char/50 transition-colors">
+          <div class="text-4xl lg:text-5xl font-bold text-gold w-14 lg:w-16 flex-shrink-0">۰۳</div>
+          <div>
+            <h3 class="text-xl lg:text-2xl font-bold mb-2">تحویل کالا</h3>
+            <p class="text-sm text-ink/65 dark:text-bone/60 leading-relaxed">بعد از تأیید قرارداد، کالا با گارانتی به دست شما می‌رسد.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     CONTACT FORM
+═════════════════════════════════════════════════════════ -->
+<section id="contact" class="py-20 lg:py-32 bg-ink text-bone dark:bg-bone dark:text-ink relative overflow-hidden">
+
+  <div class="absolute inset-0 opacity-[0.04] pointer-events-none">
+    <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <defs>
+        <pattern id="dots" width="4" height="4" patternUnits="userSpaceOnUse">
+          <circle cx="2" cy="2" r="0.4" fill="currentColor"/>
+        </pattern>
+      </defs>
+      <rect width="100" height="100" fill="url(#dots)"/>
+    </svg>
+  </div>
+
+  <div class="max-w-[1100px] mx-auto px-5 lg:px-12 relative">
+
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-12">
+
+      <div class="lg:col-span-5">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="text-xs tracking-[0.35em] font-medium text-gold">٠٤ — تماس</span>
+          <span class="w-12 deco-line text-gold"></span>
+        </div>
+        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1]">
+          سفارش <br/>
+          <span class="text-gradient">واتساپ</span>
+        </h2>
+        <p class="mt-5 lg:mt-6 text-sm sm:text-base text-bone/70 dark:text-ink/70 leading-relaxed">
+          فرم را پر کنید — با یک کلیک پیام شما در واتساپ ما باز می‌شود و تیم پشتیبانی پاسخ‌گو است.
+        </p>
+
+        <div class="mt-8 lg:mt-10 space-y-5">
+          <a href="https://wa.me/989177000737" target="_blank" rel="noopener"
+            class="flex items-center gap-4 group">
+            <span class="w-10 h-10 rounded-full bg-gold text-ink flex items-center justify-center flex-shrink-0">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.498 14.382c-.301-.15-1.767-.867-2.04-.966-.273-.101-.473-.15-.673.151-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.174-.3-.019-.465.13-.615.136-.135.301-.345.451-.523.146-.181.194-.301.297-.496.1-.21.049-.375-.025-.524-.075-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.51-.172-.015-.371-.015-.571-.015-.2 0-.523.074-.797.359-.273.3-1.045 1.02-1.045 2.475s1.07 2.865 1.219 3.075c.149.18 2.095 3.195 5.076 4.483.71.3 1.262.477 1.694.607.712.227 1.36.195 1.871.121.571-.085 1.758-.719 2.006-1.413.255-.694.255-1.29.18-1.414-.074-.135-.27-.21-.57-.345m-5.446 7.443h-.016c-1.77 0-3.524-.48-5.055-1.378l-.36-.214-3.75.975 1.005-3.645-.239-.375a9.869 9.869 0 0 1-1.51-5.26c0-5.45 4.436-9.884 9.891-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652a12.062 12.062 0 0 0 5.71 1.447h.006c6.585 0 11.946-5.336 11.949-11.896 0-3.176-1.24-6.165-3.495-8.411"/>
+              </svg>
+            </span>
+            <div>
+              <div class="text-[10px] tracking-[0.3em] uppercase text-bone/50 dark:text-ink/50">واتساپ مستقیم</div>
+              <div dir="ltr" class="text-base sm:text-lg font-bold mt-1 group-hover:text-gold transition-colors">+98 917 700 0737</div>
+            </div>
+          </a>
+
+          <div class="flex items-center gap-4">
+            <span class="w-10 h-10 rounded-full border border-bone/20 dark:border-ink/20 flex items-center justify-center flex-shrink-0">
+              <svg class="w-4 h-4 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </span>
+            <div>
+              <div class="text-[10px] tracking-[0.3em] uppercase text-bone/50 dark:text-ink/50">جنوب کشور</div>
+              <div class="text-sm sm:text-base mt-1">فردین پخش — Yerib.com</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7">
+        <form id="contactForm" class="bg-bone/5 dark:bg-ink/5 backdrop-blur border border-bone/10 dark:border-ink/10 p-6 sm:p-8 lg:p-10 rounded-sm" novalidate>
+
+          <div class="grid sm:grid-cols-2 gap-5 sm:gap-6">
+
+            <div class="sm:col-span-2">
+              <label for="name" class="block text-[10px] tracking-[0.3em] uppercase mb-3 text-bone/60 dark:text-ink/60">
+                نام و نام خانوادگی <span class="text-gold">*</span>
+              </label>
+              <input id="name" name="name" type="text" required
+                class="form-input w-full bg-transparent border-b border-bone/30 dark:border-ink/30 pb-3 text-base sm:text-lg placeholder:text-bone/30 dark:placeholder:text-ink/30"
+                placeholder="نام شما" />
+            </div>
+
+            <div>
+              <label for="phone" class="block text-[10px] tracking-[0.3em] uppercase mb-3 text-bone/60 dark:text-ink/60">
+                شماره تماس <span class="text-gold">*</span>
+              </label>
+              <input id="phone" name="phone" type="tel" required dir="ltr"
+                class="form-input w-full bg-transparent border-b border-bone/30 dark:border-ink/30 pb-3 text-base sm:text-lg placeholder:text-bone/30 dark:placeholder:text-ink/30 text-right"
+                placeholder="09XXXXXXXXX" />
+            </div>
+
+            <div class="sm:col-span-2">
+              <label class="block text-[10px] tracking-[0.3em] uppercase mb-3 text-bone/60 dark:text-ink/60">
+                محصول
+              </label>
+              <div class="flex flex-wrap gap-2">
+                <label class="cursor-pointer">
+                  <input type="checkbox" name="product" value="iPhone" class="peer sr-only">
+                  <span class="inline-flex min-h-10 items-center px-4 py-2 rounded-full border border-bone/30 dark:border-ink/30 text-sm peer-checked:bg-gold peer-checked:text-ink peer-checked:border-gold transition-all hover:border-gold">آیفون</span>
+                </label>
+                <label class="cursor-pointer">
+                  <input type="checkbox" name="product" value="Samsung Ultra" class="peer sr-only">
+                  <span class="inline-flex min-h-10 items-center px-4 py-2 rounded-full border border-bone/30 dark:border-ink/30 text-sm peer-checked:bg-gold peer-checked:text-ink peer-checked:border-gold transition-all hover:border-gold">سامسونگ Ultra</span>
+                </label>
+                <label class="cursor-pointer">
+                  <input type="checkbox" name="product" value="PlayStation" class="peer sr-only">
+                  <span class="inline-flex min-h-10 items-center px-4 py-2 rounded-full border border-bone/30 dark:border-ink/30 text-sm peer-checked:bg-gold peer-checked:text-ink peer-checked:border-gold transition-all hover:border-gold">PlayStation</span>
+                </label>
+                <label class="cursor-pointer">
+                  <input type="checkbox" name="product" value="Harman Kardon" class="peer sr-only">
+                  <span class="inline-flex min-h-10 items-center px-4 py-2 rounded-full border border-bone/30 dark:border-ink/30 text-sm peer-checked:bg-gold peer-checked:text-ink peer-checked:border-gold transition-all hover:border-gold">Harman Kardon</span>
+                </label>
+                <label class="cursor-pointer">
+                  <input type="checkbox" name="product" value="JBL" class="peer sr-only">
+                  <span class="inline-flex min-h-10 items-center px-4 py-2 rounded-full border border-bone/30 dark:border-ink/30 text-sm peer-checked:bg-gold peer-checked:text-ink peer-checked:border-gold transition-all hover:border-gold">JBL</span>
+                </label>
+                <label class="cursor-pointer">
+                  <input type="checkbox" name="product" value="مشاوره" class="peer sr-only">
+                  <span class="inline-flex min-h-10 items-center px-4 py-2 rounded-full border border-bone/30 dark:border-ink/30 text-sm peer-checked:bg-gold peer-checked:text-ink peer-checked:border-gold transition-all hover:border-gold">مشاوره</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="sm:col-span-2">
+              <label class="block text-[10px] tracking-[0.3em] uppercase mb-3 text-bone/60 dark:text-ink/60">
+                نوع خرید
+              </label>
+              <div class="flex flex-wrap gap-2">
+                <label class="cursor-pointer">
+                  <input type="radio" name="purchaseType" value="تک" class="peer sr-only" checked>
+                  <span class="inline-block px-5 py-2 rounded-full border border-bone/30 dark:border-ink/30 text-sm peer-checked:bg-gold peer-checked:text-ink peer-checked:border-gold transition-all hover:border-gold">تک</span>
+                </label>
+                <label class="cursor-pointer">
+                  <input type="radio" name="purchaseType" value="عمده" class="peer sr-only">
+                  <span class="inline-block px-5 py-2 rounded-full border border-bone/30 dark:border-ink/30 text-sm peer-checked:bg-gold peer-checked:text-ink peer-checked:border-gold transition-all hover:border-gold">عمده</span>
+                </label>
+                <label class="cursor-pointer">
+                  <input type="radio" name="purchaseType" value="اقساطی" class="peer sr-only">
+                  <span class="inline-block px-5 py-2 rounded-full border border-bone/30 dark:border-ink/30 text-sm peer-checked:bg-gold peer-checked:text-ink peer-checked:border-gold transition-all hover:border-gold">اقساطی</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="sm:col-span-2">
+              <label for="message" class="block text-[10px] tracking-[0.3em] uppercase mb-3 text-bone/60 dark:text-ink/60">
+                توضیحات
+              </label>
+              <textarea id="message" name="message" rows="3"
+                class="form-input w-full bg-transparent border-b border-bone/30 dark:border-ink/30 pb-3 text-sm sm:text-base placeholder:text-bone/30 dark:placeholder:text-ink/30 resize-none"
+                placeholder="مدل دقیق، رنگ، یا هر سؤالی دارید..."></textarea>
+            </div>
+          </div>
+
+          <div class="mt-8 lg:mt-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5 sm:gap-6">
+            <p class="text-xs text-bone/50 dark:text-ink/50 leading-relaxed sm:max-w-sm">
+              با ارسال، یک پنجره واتساپ با اطلاعات شما باز می‌شود و می‌توانید مستقیم برای ما ارسال کنید.
+            </p>
+            <button type="submit"
+              class="group inline-flex items-center justify-center gap-3 px-7 sm:px-8 py-3.5 sm:py-4 rounded-full bg-gold text-ink font-bold text-sm hover:bg-bone hover:text-ink dark:hover:bg-ink dark:hover:text-bone transition-colors w-full sm:w-auto">
+              ارسال در واتساپ
+              <svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.498 14.382c-.301-.15-1.767-.867-2.04-.966-.273-.101-.473-.15-.673.151-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.174-.3-.019-.465.13-.615.136-.135.301-.345.451-.523.146-.181.194-.301.297-.496.1-.21.049-.375-.025-.524-.075-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.51-.172-.015-.371-.015-.571-.015-.2 0-.523.074-.797.359-.273.3-1.045 1.02-1.045 2.475s1.07 2.865 1.219 3.075c.149.18 2.095 3.195 5.076 4.483.71.3 1.262.477 1.694.607.712.227 1.36.195 1.871.121.571-.085 1.758-.719 2.006-1.413.255-.694.255-1.29.18-1.414-.074-.135-.27-.21-.57-.345m-5.446 7.443h-.016c-1.77 0-3.524-.48-5.055-1.378l-.36-.214-3.75.975 1.005-3.645-.239-.375a9.869 9.869 0 0 1-1.51-5.26c0-5.45 4.436-9.884 9.891-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652a12.062 12.062 0 0 0 5.71 1.447h.006c6.585 0 11.946-5.336 11.949-11.896 0-3.176-1.24-6.165-3.495-8.411"/>
+              </svg>
+            </button>
+          </div>
+
+          <p id="formError" class="hidden mt-4 text-sm text-rust">لطفاً نام و شماره تماس را وارد کنید.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     FOOTER
+═════════════════════════════════════════════════════════ -->
+<footer class="border-t border-ink/10 dark:border-bone/10 py-8 lg:py-10">
+  <div class="max-w-[1400px] mx-auto px-5 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-5 lg:gap-6">
+
+    <div class="flex items-center gap-3">
+      <span class="text-xl font-bold">Yerib</span>
+      <span class="w-1 h-1 rounded-full bg-gold"></span>
+      <span class="text-xs text-ink/50 dark:text-bone/50">© ۱۴۰۴ — تمام حقوق محفوظ است.</span>
+    </div>
+
+    <div class="flex items-center gap-5 sm:gap-6 text-xs text-ink/60 dark:text-bone/60">
+      <a href="#brands" class="hover:text-gold transition-colors">برندها</a>
+      <a href="#installments" class="hover:text-gold transition-colors">اقساط</a>
+      <a href="#contact" class="hover:text-gold transition-colors">تماس</a>
+    </div>
+
+    <div class="text-[10px] tracking-widest text-ink/40 dark:text-bone/40">
+      YERIB.COM · جنوب کشور
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════════
+     SCRIPTS
+═════════════════════════════════════════════════════════ -->
+<script>
+  // ── Theme toggle ──────────────────────────────────────
+  const root = document.documentElement;
+  const toggleBtn = document.getElementById('themeToggle');
+  const stored = localStorage.getItem('yerib-theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  if (stored === 'dark' || (!stored && prefersDark)) root.classList.add('dark');
+
+  toggleBtn.addEventListener('click', () => {
+    root.classList.toggle('dark');
+    localStorage.setItem('yerib-theme', root.classList.contains('dark') ? 'dark' : 'light');
+  });
+
+  // ── Mobile menu ───────────────────────────────────────
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const hamburgerIcon = document.getElementById('hamburgerIcon');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  hamburgerBtn.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburgerIcon.classList.toggle('open');
+    hamburgerBtn.setAttribute('aria-label', isOpen ? 'بستن منو' : 'باز کردن منو');
+  });
+
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburgerIcon.classList.remove('open');
+    });
+  });
+
+  // ── Hero auto-slider ──────────────────────────────────
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.slide-dot');
+  let currentSlide = 0;
+  let slideInterval;
+
+  function goToSlide(idx) {
+    slides[currentSlide].classList.remove('active');
+    dots[currentSlide].classList.remove('active');
+    currentSlide = idx;
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+  }
+
+  function nextSlide() {
+    goToSlide((currentSlide + 1) % slides.length);
+  }
+
+  function startAutoplay() {
+    slideInterval = setInterval(nextSlide, 4500);
+  }
+
+  function stopAutoplay() {
+    clearInterval(slideInterval);
+  }
+
+  dots.forEach((dot, idx) => {
+    dot.addEventListener('click', () => {
+      stopAutoplay();
+      goToSlide(idx);
+      startAutoplay();
+    });
+  });
+
+  startAutoplay();
+
+  // ── Form → WhatsApp ───────────────────────────────────
+  const WHATSAPP_NUMBER = '989177000737';
+  const form = document.getElementById('contactForm');
+  const errorEl = document.getElementById('formError');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const name = form.name.value.trim();
+    const phone = form.phone.value.trim();
+    const products = Array.from(form.querySelectorAll('input[name="product"]:checked'))
+      .map((option) => option.value)
+      .filter(Boolean);
+    const purchaseType = form.purchaseType.value;
+    const message = form.message.value.trim();
+
+    if (!name || !phone) {
+      errorEl.classList.remove('hidden');
+      return;
+    }
+    errorEl.classList.add('hidden');
+
+    const lines = [
+      '*سفارش جدید از Yerib.com*',
+      '─────────────────────',
+      `*نام:* ${name}`,
+      `*تماس:* ${phone}`,
+    ];
+    if (products.length) lines.push(`*محصول:* ${products.join('، ')}`);
+    if (purchaseType) lines.push(`*نوع خرید:* ${purchaseType}`);
+    if (message) lines.push('', `*توضیحات:*`, message);
+
+    const text = encodeURIComponent(lines.join('\n'));
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+
+    window.open(url, '_blank', 'noopener');
+  });
+</script>
+
+</body>
+</html>
